@@ -1,0 +1,31 @@
+:root { --bg:#f5f6f8; --card:#fff; --text:#1c2128; --muted:#6b7280; --line:#e5e7eb; --accent:#4f46e5; --ok:#15803d; --bad:#b91c1c; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#0f1115; --card:#181b21; --text:#e6e8eb; --muted:#9aa1ad; --line:#2a2f38; --accent:#818cf8; --ok:#4ade80; --bad:#f87171; }
+}
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font:15px/1.5 system-ui, sans-serif; }
+.app { max-width: 960px; margin: 0 auto; padding: 16px; display: grid; gap: 16px; }
+.card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:16px; }
+.auth { max-width: 340px; margin: 12vh auto; display: grid; gap: 10px; }
+h1 { font-size: 1.3rem; margin: 0; } h2 { font-size: 1.05rem; margin: 0 0 8px; } h3 { font-size: .9rem; margin: 12px 0 4px; }
+input, select { padding: 8px 10px; border:1px solid var(--line); border-radius:6px; background:var(--bg); color:var(--text); font:inherit; }
+button { padding: 8px 14px; border:0; border-radius:6px; background:var(--accent); color:#fff; font:inherit; cursor:pointer; }
+button.link { background:none; color:var(--accent); padding:4px 8px; }
+button:disabled { opacity:.4; cursor:default; }
+a { color:var(--accent); font-size:.9rem; }
+.row { display:flex; gap:8px; flex-wrap:wrap; } .row input { flex:1; min-width:160px; }
+.between { display:flex; justify-content:space-between; align-items:center; gap:8px; }
+.list { list-style:none; margin:12px 0 0; padding:0; }
+.list li { display:flex; justify-content:space-between; align-items:center; gap:8px; padding:10px; border-top:1px solid var(--line); }
+.list li > div { flex:1; min-width:0; cursor:pointer; display:grid; }
+.list li.sel, tr.sel { background: color-mix(in srgb, var(--accent) 10%, transparent); }
+code { font-size:.78rem; color:var(--muted); overflow-wrap:anywhere; cursor:copy; }
+small, .muted { color:var(--muted); }
+.ok { color:var(--ok); } .bad, .err { color:var(--bad); }
+table { width:100%; border-collapse:collapse; margin:8px 0; }
+th, td { text-align:left; padding:8px; border-top:1px solid var(--line); }
+th { font-size:.8rem; color:var(--muted); font-weight:600; }
+tbody tr { cursor:pointer; }
+.badge { padding:2px 8px; border-radius:99px; font-size:.75rem; background:var(--line); }
+.badge.delivered { color:var(--ok); } .badge.failed { color:var(--bad); }
+pre { background:var(--bg); border:1px solid var(--line); border-radius:6px; padding:10px; overflow:auto; max-height:320px; font-size:.82rem; }
